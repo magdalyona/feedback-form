@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Link  } from "react-router-dom";
+import { AppBar, Box, Container, CssBaseline, Toolbar, Typography, Button } from "@mui/material";
+import MainPage from "./pages/MainPage";    
+import HistoryPage from "./pages/HistoryPage";  
 
-function App() {
+//роутинг и верхнее меню
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter> 
+    <CssBaseline />
+    <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6" sx={{flexGrow: 1}}>
+          Форма обратной связи
+        </Typography>
+  
+        <Button color="inherit" component={Link} to="/">
+          История
+        </Button>
+  
+      </Toolbar>
+    </AppBar>
+  
+    <Box component="main" sx={{py: 4}}>
+      <Container maxWidth="md">
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/history" element={<HistoryPage />} />
+        </Routes>
+      </Container>
+    </Box>
+    </BrowserRouter>
   );
 }
 
 export default App;
+

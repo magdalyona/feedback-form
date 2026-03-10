@@ -1,0 +1,14 @@
+{
+    "feedback": [
+      {
+        "id": "1",
+        "name": "Иван Иванов",
+        "email": "ivan@example.com",
+        "topic": "Общий вопрос",
+        "message": "Привет, хотел бы задать общий вопрос.",
+        "fileName": "",
+        "agreement": true,
+        "createdAt": "2023-10-01T12:00:00Z"
+      }
+    ]
+  }
