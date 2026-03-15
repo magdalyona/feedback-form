@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useSnackbar } from 'notistack';
 import {
   Box,
   Button,
@@ -24,6 +25,7 @@ import { useFeedbackStore } from '../../store/feedbackStore';
 
 export const FeedbackForm = () => {
   const [file, setFile] = useState<File | null>(null);
+  const { enqueueSnackbar } = useSnackbar();
   const createFeedback = useFeedbackStore((state) => state.createFeedback);
   const isGlobalLoading = useFeedbackStore((state) => state.isLoading);
 
@@ -56,7 +58,9 @@ export const FeedbackForm = () => {
     if (result) {
       reset();
       setFile(null);
-      // позже здесь добавим Snackbar с уведомлением об успехе
+      enqueueSnackbar('Форма успешно отправлена', { variant: 'success' });
+    } else {
+      enqueueSnackbar('Не удалось отправить форму', { variant: 'error' });
     }
   };
 
