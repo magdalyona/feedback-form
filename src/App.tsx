@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link  } from "react-router-dom";
+import { HashRouter, Routes, Route, Link  } from "react-router-dom";
 import { AppBar, Box, Container, CssBaseline, Toolbar, Typography, Button } from "@mui/material";
 import MainPage from "./pages/MainPage";    
 import HistoryPage from "./pages/HistoryPage";  
@@ -6,7 +6,7 @@ import HistoryPage from "./pages/HistoryPage";
 //роутинг и верхнее меню
 const App = () => {
   return (
-    <BrowserRouter> 
+    <HashRouter> 
     <CssBaseline />
     <AppBar position="static">
       <Toolbar>
@@ -29,7 +29,7 @@ const App = () => {
         </Routes>
       </Container>
     </Box>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

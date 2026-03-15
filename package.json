@@ -1,6 +1,7 @@
 {
   "name": "feedback-form",
   "version": "0.1.0",
+  "homepage": "https://magdalyona.github.io/feedback-form",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
